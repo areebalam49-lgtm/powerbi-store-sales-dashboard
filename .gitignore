@@ -1,0 +1,17 @@
+# Power BI temp / lock files
+~$*.pbix
+*.pbix.bak
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+
+# Keep your real store export private
+data/*.csv
+!data/sample/*.csv
+
+# Python
+__pycache__/
+*.pyc
+
+# Mac / Windows
+.DS_Store
+Thumbs.db
