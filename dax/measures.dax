@@ -1,0 +1,81 @@
+// Create an empty table to hold measures: Home > Enter data > name it "_Measures" > Load.
+// Then select _Measures and use New measure for each block below (one measure per block).
+// Suggested display folders are in [brackets].
+
+// ---------- [Sales] ----------
+Total Revenue = SUM ( FactSales[line_revenue] )
+
+Total Cost = SUM ( FactSales[line_cost] )
+
+Gross Margin = [Total Revenue] - [Total Cost]
+
+Gross Margin % = DIVIDE ( [Gross Margin], [Total Revenue] )
+
+Units Sold = SUM ( FactSales[quantity] )
+
+Bills Count = DISTINCTCOUNT ( FactSales[bill_id] )
+
+Avg Bill Value = DIVIDE ( [Total Revenue], [Bills Count] )
+
+Items per Bill = DIVIDE ( [Units Sold], [Bills Count] )
+
+// ---------- [Time intelligence] ----------
+Revenue Prev Month =
+CALCULATE ( [Total Revenue], DATEADD ( DimDate[Date], -1, MONTH ) )
+
+Revenue MoM % =
+VAR Prev = [Revenue Prev Month]
+RETURN
+    IF ( NOT ISBLANK ( Prev ), DIVIDE ( [Total Revenue] - Prev, Prev ) )
+
+Running Revenue =
+CALCULATE (
+    [Total Revenue],
+    FILTER ( ALL ( DimDate[Date] ), DimDate[Date] <= MAX ( DimDate[Date] ) )
+)
+
+// Average monthly revenue over the last 3 months (use on a monthly axis)
+Revenue 3M Avg =
+DIVIDE (
+    CALCULATE ( [Total Revenue], DATESINPERIOD ( DimDate[Date], MAX ( DimDate[Date] ), -3, MONTH ) ),
+    3
+)
+
+// ---------- [Mix] ----------
+Revenue Share % =
+DIVIDE ( [Total Revenue], CALCULATE ( [Total Revenue], ALL ( DimProduct ) ) )
+
+Category Share % =
+DIVIDE ( [Total Revenue], CALCULATE ( [Total Revenue], ALL ( DimProduct[category] ) ) )
+
+Product Rank =
+RANKX ( ALL ( DimProduct[product_name] ), [Total Revenue], , DESC, DENSE )
+
+UPI Share % =
+DIVIDE (
+    CALCULATE ( [Total Revenue], FactSales[payment_mode] = "UPI" ),
+    [Total Revenue]
+)
+
+// ---------- [Stock] ----------
+Low Stock Items =
+COUNTROWS ( FILTER ( DimProduct, DimProduct[stock_qty] < DimProduct[reorder_level] ) )
+
+Avg Daily Units =
+DIVIDE ( [Units Sold], DISTINCTCOUNT ( FactSales[sale_date] ) )
+
+Days of Cover =
+DIVIDE ( SUM ( DimProduct[stock_qty] ), [Avg Daily Units] )
+
+// ---------- [Suppliers] ----------
+Purchase Value = SUM ( FactPurchases[purchase_value] )
+
+Purchase Orders = COUNTROWS ( FactPurchases )
+
+Avg Delay Days = AVERAGE ( FactPurchases[delay_days] )
+
+On-Time Delivery % =
+DIVIDE (
+    CALCULATE ( COUNTROWS ( FactPurchases ), FactPurchases[on_time] = "On time" ),
+    [Purchase Orders]
+)

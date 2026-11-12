@@ -1,0 +1,9 @@
+supplier_id,supplier_name,city,lead_time_days
+S01,Sample Supplier A (Staples),New Delhi,3
+S02,Sample Supplier B (Oils),Ghaziabad,4
+S03,Sample Supplier C (Spices),New Delhi,5
+S04,Sample Supplier D (Beverages),Noida,4
+S05,Sample Supplier E (Snacks),Gurugram,3
+S06,Sample Supplier F (Dairy),New Delhi,1
+S07,Sample Supplier G (Personal Care),Faridabad,6
+S08,Sample Supplier H (Household),Noida,5

@@ -1,0 +1,70 @@
+product_id,product_name,category,cost_price,selling_price,stock_qty,reorder_level,supplier_id
+P001,Basmati Rice 1kg,Staples,95,120,16,8,S01
+P002,Sona Masoori Rice 5kg,Staples,290,340,9,15,S01
+P003,Wheat Atta 5kg,Staples,210,255,25,11,S01
+P004,Toor Dal 1kg,Staples,125,155,99,25,S01
+P005,Moong Dal 1kg,Staples,105,135,66,21,S01
+P006,Chana Dal 1kg,Staples,80,102,32,10,S01
+P007,Rajma 500g,Staples,70,92,34,24,S01
+P008,Kabuli Chana 1kg,Staples,95,125,7,25,S01
+P009,Besan 500g,Staples,45,60,111,28,S01
+P010,Poha 500g,Staples,28,40,51,21,S01
+P011,Suji 500g,Staples,24,34,16,26,S01
+P012,Sugar 1kg,Staples,40,48,5,8,S01
+P013,Salt 1kg,Staples,18,25,6,13,S01
+P014,Jaggery 1kg,Staples,55,72,25,18,S01
+P015,Mustard Oil 1L,Oils & Ghee,140,168,35,14,S02
+P016,Sunflower Oil 1L,Oils & Ghee,125,150,79,18,S02
+P017,Soybean Oil 1L,Oils & Ghee,115,138,86,20,S02
+P018,Groundnut Oil 1L,Oils & Ghee,175,210,30,19,S02
+P019,Desi Ghee 500ml,Oils & Ghee,280,325,39,9,S02
+P020,Vanaspati 1L,Oils & Ghee,120,142,65,25,S02
+P021,Turmeric Powder 200g,Spices,32,45,84,20,S03
+P022,Red Chilli Powder 200g,Spices,45,62,48,17,S03
+P023,Coriander Powder 200g,Spices,30,42,125,27,S03
+P024,Garam Masala 100g,Spices,48,68,10,19,S03
+P025,Cumin Seeds 100g,Spices,38,55,126,30,S03
+P026,Black Pepper 50g,Spices,45,65,76,29,S03
+P027,Mustard Seeds 100g,Spices,15,24,29,17,S03
+P028,Hing 25g,Spices,40,58,32,15,S03
+P029,Tea Leaves 500g,Beverages,190,235,72,20,S04
+P030,Instant Coffee 100g,Beverages,230,285,105,28,S04
+P031,Green Tea 25 bags,Beverages,110,145,64,13,S04
+P032,Glucose Drink 500g,Beverages,165,205,27,14,S04
+P033,Cold Drink 750ml,Beverages,30,40,106,30,S04
+P034,Fruit Juice 1L,Beverages,85,110,63,28,S04
+P035,Packaged Water 1L,Beverages,14,20,76,28,S04
+P036,Glucose Biscuits 250g,Snacks,22,30,46,15,S05
+P037,Cream Biscuits 150g,Snacks,25,35,28,20,S05
+P038,Salted Chips 90g,Snacks,15,20,31,28,S05
+P039,Namkeen Mix 400g,Snacks,70,95,73,15,S05
+P040,Rusk 300g,Snacks,35,48,23,9,S05
+P041,Instant Noodles 4-pack,Snacks,48,60,7,9,S05
+P042,Cornflakes 475g,Snacks,155,195,63,20,S05
+P043,Chocolate Bar 50g,Snacks,38,50,25,14,S05
+P044,Peanut Chikki 200g,Snacks,30,45,13,26,S05
+P045,Milk 1L,Dairy & Bakery,54,62,30,18,S06
+P046,Curd 400g,Dairy & Bakery,30,38,110,23,S06
+P047,Paneer 200g,Dairy & Bakery,75,92,139,28,S06
+P048,Butter 100g,Dairy & Bakery,50,58,76,16,S06
+P049,Bread 400g,Dairy & Bakery,32,42,109,25,S06
+P050,Brown Bread 400g,Dairy & Bakery,40,52,64,26,S06
+P051,Eggs 6-pack,Dairy & Bakery,38,48,33,26,S06
+P052,Cheese Slices 200g,Dairy & Bakery,110,135,48,15,S06
+P053,Bath Soap 100g,Personal Care,28,40,16,12,S07
+P054,Shampoo 180ml,Personal Care,105,140,9,10,S07
+P055,Toothpaste 150g,Personal Care,70,95,14,11,S07
+P056,Toothbrush,Personal Care,18,30,44,13,S07
+P057,Hair Oil 200ml,Personal Care,80,110,44,21,S07
+P058,Face Wash 100ml,Personal Care,95,135,2,20,S07
+P059,Talcum Powder 100g,Personal Care,60,85,73,22,S07
+P060,Shaving Cream 70g,Personal Care,45,65,16,25,S07
+P061,Detergent Powder 1kg,Household,85,115,17,8,S08
+P062,Dishwash Bar 200g,Household,15,22,19,11,S08
+P063,Dishwash Liquid 500ml,Household,80,110,36,25,S08
+P064,Floor Cleaner 1L,Household,110,150,3,28,S08
+P065,Toilet Cleaner 500ml,Household,70,95,74,17,S08
+P066,Mosquito Coil 10pc,Household,30,45,50,22,S08
+P067,Agarbatti Pack,Household,25,40,9,16,S08
+P068,Matchbox 10-pack,Household,8,12,55,13,S08
+P069,Garbage Bags 30pc,Household,55,80,15,11,S08

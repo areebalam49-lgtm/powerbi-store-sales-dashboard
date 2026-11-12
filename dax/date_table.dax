@@ -1,0 +1,17 @@
+// Modeling > New Table, paste this, then Table tools > Mark as date table > Date.
+// Sort "Month" by "MonthKey" (select Month column > Column tools > Sort by column).
+
+DimDate =
+VAR MinDate = MIN ( FactSales[sale_date] )
+VAR MaxDate = MAX ( FactSales[sale_date] )
+RETURN
+    ADDCOLUMNS (
+        CALENDAR ( DATE ( YEAR ( MinDate ), MONTH ( MinDate ), 1 ), EOMONTH ( MaxDate, 0 ) ),
+        "Year", YEAR ( [Date] ),
+        "MonthNo", MONTH ( [Date] ),
+        "MonthKey", YEAR ( [Date] ) * 100 + MONTH ( [Date] ),
+        "Month", FORMAT ( [Date], "MMM yyyy" ),
+        "Weekday", FORMAT ( [Date], "ddd" ),
+        "WeekdayNo", WEEKDAY ( [Date], 2 ),
+        "IsWeekend", IF ( WEEKDAY ( [Date], 2 ) >= 6, "Weekend", "Weekday" )
+    )
